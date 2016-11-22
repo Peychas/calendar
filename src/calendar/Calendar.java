@@ -21,6 +21,9 @@ public class Calendar extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(350,25);
 		setPreferredSize(new Dimension(1200,1000));
+		
+		JavaDB db = new JavaDB("localhost","root","","calendar");
+		
 		try
 		{
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

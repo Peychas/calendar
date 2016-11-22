@@ -15,7 +15,7 @@ JTextField username;
 		public Inloggning()
 		{
 			username = new JTextField();
-			username.setPreferredSize(new Dimension(100,30));
+			username.setPreferredSize(new Dimension(200,30));
 			add(username);
 			setBackground(new Color(0,180,90));
 			password = new JPasswordField();
