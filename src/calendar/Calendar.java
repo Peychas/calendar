@@ -14,6 +14,7 @@ public class Calendar extends JFrame {
 	 */
 	
 	private Inloggning inloggning;
+	private Month month;
 	
 	public Calendar()
 	{
@@ -34,6 +35,8 @@ public class Calendar extends JFrame {
 		add(split);
 		inloggning = new Inloggning();
 		split.setLeftComponent(inloggning);
+		month = new Month();
+		split.setRightComponent(month);
 		pack();
 		setVisible(true);
 	}
