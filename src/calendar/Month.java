@@ -1,7 +1,9 @@
 package calendar;
 
-import java.awt.Color;
 import java.awt.GridLayout;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -23,6 +25,15 @@ public class Month extends JPanel {
 			buttons[i] = new JButton();
 			add(buttons[i]);
 		}
+		LocalDateTime now = LocalDateTime.now();
+		int year = now.getYear();
+		int month = now.getMonthValue();
+		int day = now.getDayOfMonth();
+		int hour = now.getHour();
+		int minute = now.getMinute();
+
+		System.out.printf("%d-%02d-%02d %02d:%02d", year, month, day, hour, minute);
+		
 		
 	}
 
