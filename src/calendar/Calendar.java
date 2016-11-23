@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 
@@ -14,6 +15,7 @@ public class Calendar extends JFrame {
 	 */
 	
 	private Inloggning inloggning;
+	private register registrera ;
 	private Month month;
 	
 	public Calendar()
@@ -33,10 +35,22 @@ public class Calendar extends JFrame {
 		JSplitPane split = new JSplitPane();
 		setLayout(new GridLayout(1,1));
 		add(split);
+		JPanel split2 = new JPanel();
+		split2.setLayout(new GridLayout(2,1));
 		inloggning = new Inloggning();
-		split.setLeftComponent(inloggning);
+		split2.add(inloggning);
+		registrera = new register();
+		split2.add(registrera);
+		split.setLeftComponent(split2);
+		
+		
+		
+		
 		month = new Month();
 		split.setRightComponent(month);
+		
+		
+		
 		pack();
 		setVisible(true);
 	}
