@@ -42,12 +42,11 @@ public class Calendar extends JFrame {
 		registrera = new register();
 		split2.add(registrera);
 		split.setLeftComponent(split2);
-		
-		
-		
-		
+		JPanel split3 = new JPanel();
+		split3.setLayout(new GridLayout(2,1));
 		month = new Month();
-		split.setRightComponent(month);
+		split3.add(month);
+		split.setRightComponent(split3);
 		
 		
 		
