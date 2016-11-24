@@ -31,6 +31,8 @@ JButton Login;
 			Login = new JButton("Logga in");
 			add(Login);
 			
+			
+			
 		}
 		
 

@@ -2,8 +2,6 @@ package calendar;
 
 import java.awt.GridLayout;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
