@@ -22,7 +22,7 @@ public class Month extends JPanel {
 		}
 		JButton[] buttons = new JButton[31];
 		for(int i = 0; i < buttons.length; i++){
-			buttons[i] = new JButton();
+			buttons[i] = new JButton("" + (1+i) );
 			add(buttons[i]);
 		}
 		LocalDateTime now = LocalDateTime.now();
