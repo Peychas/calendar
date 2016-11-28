@@ -61,13 +61,13 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			   if((String)petterNicklas[0][0]=="");
 			   
 			   
-				JOptionPane.showMessageDialog(null, "GJ du har lyckats");
+				JOptionPane.showMessageDialog(null, "Inloggningen lyckades!");
 				
 				// skriver du något som inte stämmer överens med det som står i databasen får du ett felmeddelande
 				
 			}catch(Exception error)
 			{
-				JOptionPane.showMessageDialog(null, "FEW");
+				JOptionPane.showMessageDialog(null, "Användarnamn eller lösenord är fel!");
 			}
 			
 			//JOptionPane.showMessageDialog(null, petterNicklas[0][0]);
