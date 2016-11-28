@@ -19,7 +19,7 @@ public class register extends JPanel implements ActionListener {
 JPasswordField password1,password2;
 JTextField username;
 JTextField email;
-JButton loggain;
+JButton reg;
 
 JavaDB db = new JavaDB("localhost","root","","calendar");
 
@@ -53,9 +53,9 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 		add(password2);
 		JLabel l6 = new JLabel();
 		add(l6);
-		loggain = new JButton("Registrera dig");
-		loggain.addActionListener(this);
-		add(loggain);
+		reg = new JButton("Registrera dig");
+		reg.addActionListener(this);
+		add(reg);
 		
 		
 		

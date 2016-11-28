@@ -14,7 +14,8 @@ import javax.swing.JTextField;
 
 public class Inloggning extends JPanel implements ActionListener {
 	
-JPasswordField password;
+//JPasswordField password;
+	JTextField password;
 JTextField username;
 JButton Login; 
 	
@@ -28,7 +29,8 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			add(username);
 			
 			setBackground(new Color(163, 220, 206));
-			password = new JPasswordField();
+			//password = new JPasswordField();
+			password = new JTextField();
 			setLayout(new FlowLayout(FlowLayout.CENTER));
 			password.setPreferredSize(new Dimension(100,30));
 			add(password);
@@ -45,11 +47,30 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 		public void actionPerformed(ActionEvent e) {
 			
 			String user = username.getText();
-			char[] pwd = password.getPassword();
+			//char[] pwd = password.getPassword();
+			String pwd = password.getText();
+			Object[][] petterNicklas = null;
+				
 			
-			String SQL = String.format("SELECT * FROM user WHERE username = 'user' AND password = 'pwd' ");
-			db.execute(SQL);
-			JOptionPane.showMessageDialog(null, "vem fan e do");
+			String SQL = String.format("SELECT * FROM user WHERE username = '"+ user + "' AND password = '" +  pwd + "' ");
+			petterNicklas = db.getData(SQL);
+			//JOptionPane.showMessageDialog(null, petterNicklas);
+			// kollar om det du skriver in matchar med databasen
+			
+			try{
+			   if((String)petterNicklas[0][0]=="");
+			   
+			   
+				JOptionPane.showMessageDialog(null, "GJ du har lyckats");
+				
+				// skriver du något som inte stämmer överens med det som står i databasen får du ett felmeddelande
+				
+			}catch(Exception error)
+			{
+				JOptionPane.showMessageDialog(null, "FEW");
+			}
+			
+			//JOptionPane.showMessageDialog(null, petterNicklas[0][0]);
 			
 		}
 		
