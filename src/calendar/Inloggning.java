@@ -3,19 +3,23 @@ package calendar;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.JButton;
 
-public class Inloggning extends JPanel {
+public class Inloggning extends JPanel implements ActionListener {
+	
 JPasswordField password;
 JTextField username;
 JButton Login; 
 	
+JavaDB db = new JavaDB("localhost","root","","calendar");
+
 		public Inloggning()
 		{
 			
@@ -30,8 +34,22 @@ JButton Login;
 			add(password);
 			Login = new JButton("Logga in");
 			add(Login);
+			Login.addActionListener(this);
+			add(Login);
 			
 			
+			
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			String user = username.getText();
+			char[] pwd = password.getPassword();
+			
+			String SQL = String.format("SELECT * FROM user WHERE username = 'user' AND password = 'pwd' ");
+			db.execute(SQL);
+			JOptionPane.showMessageDialog(null, "vem fan e do");
 			
 		}
 		

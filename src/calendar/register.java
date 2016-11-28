@@ -68,6 +68,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 		String user = username.getText();
 		String epost = email.getText();
 		
+		
 		System.out.println(password1.getPassword());
 		
 		if(new String(password1.getPassword()).equals(new String(password2.getPassword())))
