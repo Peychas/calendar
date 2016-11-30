@@ -60,7 +60,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			try{
 			   if((String)petterNicklas[0][0]=="");
 			   
-			   
+			  // actionResponse.sendRedirect("notiflikationer");
 				JOptionPane.showMessageDialog(null, "Inloggningen lyckades!");
 				
 				// skriver du något som inte stämmer överens med det som står i databasen får du ett felmeddelande

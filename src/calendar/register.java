@@ -70,8 +70,11 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 		
 		
 		System.out.println(password1.getPassword());
-		
-		if(new String(password1.getPassword()).equals(new String(password2.getPassword())))
+		//username.setText("hfhhf");
+		if(user == "a"){
+			username.requestFocus();
+			JOptionPane.showMessageDialog(null,"Du är nu dhsaj!");} 
+		else if(new String(password1.getPassword()).equals(new String(password2.getPassword())))
 		{
 			String password = new String(password1.getPassword());
 			String SQL= String.format("insert into user(username,email,password)values('%s','%s','%s');",user,epost,password);

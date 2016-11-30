@@ -22,7 +22,7 @@ public class Calendar extends JFrame {
 	
 	public Calendar()
 	{
-		super("Håll reda på dina prylar");
+		super("Din personliga kalender");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(350,25);
 		setPreferredSize(new Dimension(1200,1000));
