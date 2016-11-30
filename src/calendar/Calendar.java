@@ -18,6 +18,7 @@ public class Calendar extends JFrame {
 	private register registrera ;
 	private Month month;
 	private Banner banner;
+	public int manad = 0;
 	
 	public Calendar()
 	{
@@ -47,7 +48,7 @@ public class Calendar extends JFrame {
 		split3.setLayout(new GridLayout(2,1));
 		banner = new Banner();
 		split3.add(banner);
-		month = new Month();
+		month = new Month(manad);
 		split3.add(month);
 		split.setRightComponent(split3);
 		
