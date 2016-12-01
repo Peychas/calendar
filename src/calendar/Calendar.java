@@ -19,6 +19,8 @@ public class Calendar extends JFrame {
 	private Month month;
 	private Banner banner;
 	public int manad = 0;
+	private JSplitPane split2;
+	private JSplitPane split3;
 	
 	public Calendar()
 	{
@@ -54,12 +56,21 @@ public class Calendar extends JFrame {
 		
 		
 		
+		
+		
+		
+		
 		pack();
 		setVisible(true);
 	}
 	public static void main(String[] args) {
 		new Calendar();
 
+	}
+	public void changeSplit2()
+	
+	{
+		
 	}
 
 }
