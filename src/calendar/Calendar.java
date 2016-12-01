@@ -19,8 +19,12 @@ public class Calendar extends JFrame {
 	private Month month;
 	private Banner banner;
 	public int manad = 0;
+<<<<<<< HEAD
 	private JSplitPane split2;
 	private JSplitPane split3;
+=======
+	private Week week;
+>>>>>>> origin/master
 	
 	public Calendar()
 	{
@@ -28,6 +32,7 @@ public class Calendar extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(350,25);
 		setPreferredSize(new Dimension(1200,1000));
+		setResizable(false);
 		
 		JavaDB db = new JavaDB("localhost","root","","calendar");
 		
@@ -50,8 +55,8 @@ public class Calendar extends JFrame {
 		split3.setLayout(new GridLayout(2,1));
 		banner = new Banner();
 		split3.add(banner);
-		month = new Month(manad);
-		split3.add(month);
+		week = new Week();
+		split3.add(week);
 		split.setRightComponent(split3);
 		
 		
