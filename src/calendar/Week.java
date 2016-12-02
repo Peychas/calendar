@@ -54,6 +54,16 @@ public class Week extends JPanel {
 			System.out.println(daysInMonth);
 
 			System.out.printf("%d-%02d-%02d", year, month, day);
+			JLabel[] labels1 = new JLabel[35];
+			for(int i = 0; i < labels1.length; i++) {
+				labels1[i] = new JLabel("ö", JLabel.CENTER);
+				add(labels1[i], c);
+				c.gridx++;
+				if (c.gridx >= 7) {
+					c.gridx = 0;
+					c.gridy++;
+				}
+			}
 			
 			
 		}
