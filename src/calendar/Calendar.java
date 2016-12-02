@@ -19,12 +19,12 @@ public class Calendar extends JFrame {
 	private Month month;
 	private Banner banner;
 	public int manad = 0;
-<<<<<<< HEAD
+
 	private JSplitPane split2;
 	private JSplitPane split3;
-=======
+
 	private Week week;
->>>>>>> origin/master
+
 	
 	public Calendar()
 	{

@@ -5,8 +5,8 @@ import java.awt.GridLayout;
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -21,7 +21,12 @@ public class Banner extends JPanel {
 		LocalDateTime now = LocalDateTime.now();
 		Month month = now.getMonth();
 		int year = now.getYear();
-		JLabel label = new JLabel("" + month + " " + year , JLabel.CENTER);
+		int day = now.getDayOfMonth();
+		int hour = now.getHour();
+		int minute = now.getMinute();
+		DayOfWeek week = now.getDayOfWeek();
+		System.out.println(now.format(DateTimeFormatter.ofPattern("w")));
+		JLabel label = new JLabel(day + " " + month + " " + "vecka " + now.format(DateTimeFormatter.ofPattern("w"))  + " " + year , JLabel.CENTER);
 		label.setFont(new Font("San-Serif", Font.PLAIN, 40));
  		add(label);
  		viewselect = new ViewSelect();
