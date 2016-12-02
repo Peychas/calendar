@@ -1,5 +1,7 @@
 package calendar;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -7,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
 
 public class Calendar extends JFrame {
 
@@ -37,19 +38,20 @@ public class Calendar extends JFrame {
 		super("Din personliga kalender");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocation(350,25);
-		setPreferredSize(new Dimension(1200,1000));
-		setResizable(true);
+		setPreferredSize(new Dimension(1300,1000));
+		setResizable(false);
 		
 		JavaDB db = new JavaDB("localhost","root","","calendar");
 		
 		try
 		{
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+			
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		
-	        System.out.println(info.getClassName());
-			}
-			//UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+	        
+			
+			
+			//UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 			//UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
 		} 
 		catch(Exception error){};
@@ -57,14 +59,14 @@ public class Calendar extends JFrame {
 		setLayout(new GridLayout(1,1));
 		split.setDividerLocation(300);
 		add(split);
-		//JPanel split2 = new JPanel();
+		
 		split2 = new JPanel();
 		split2.setLayout(new GridLayout(2,1));
 		inloggning = new Inloggning(this);
 		split2.add(inloggning);
 		
 		registrera = new register();
-		//split2.setBackground(new Color(0,180,0));
+		split2.setBackground(new Color(0,180,0));
 		split2.add(registrera);
 		
 		split.setLeftComponent(split2);
@@ -79,7 +81,6 @@ public class Calendar extends JFrame {
 		month = new Month(manad);
 		split3.add(month);
 		split.setRightComponent(split3);
-		//add(new sidebar(this));
 		sidebar = new sidebar(this);
 		
 		
@@ -100,8 +101,13 @@ public class Calendar extends JFrame {
 	{
 		split2.remove(inloggning);
 		split2.remove(registrera);
-		//split2.setLayout(new GridLayout(1,1));
-		split2.add(sidebar);
+		split2.setLayout(new BorderLayout());
+		split2.add(BorderLayout.CENTER,sidebar);
+		JPanel south = new JPanel();
+		south.setBackground(new Color(123,123,123));
+		south.setPreferredSize(new Dimension(500,100));
+		split2.add(BorderLayout.SOUTH,south);
+		south.add(sidebar.getSignOut());
 		repaint();
 		pack();
 		

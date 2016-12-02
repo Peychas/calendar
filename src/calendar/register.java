@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class register extends JPanel implements ActionListener {
 
@@ -32,7 +33,6 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 		add(l1);
 		JLabel l2 = new JLabel("Användarnamn:",JLabel.CENTER);
 		add(l2);
-		
 		username = new JTextField();
 		username.setPreferredSize(new Dimension (100,30));
 		add(username);
