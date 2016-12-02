@@ -31,7 +31,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			username.setPreferredSize(new Dimension(100,30));
 			add(username);
 			
-			setBackground(new Color(163, 220, 206));
+			setBackground(new Color(166, 166, 166));
 			//password = new JPasswordField();
 			password = new JTextField();
 			setLayout(new FlowLayout(FlowLayout.CENTER));
@@ -57,7 +57,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			
 			String SQL = String.format("SELECT * FROM user WHERE username = '"+ user + "' AND password = '" +  pwd + "' ");
 			database = db.getData(SQL);
-			//JOptionPane.showMessageDialog(null, petterNicklas);
+			
 			// kollar om det du skriver in matchar med databasen
 			
 			try{
@@ -79,7 +79,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 				JOptionPane.showMessageDialog(null, "Användarnamn eller lösenord är fel!");
 			}
 			
-			//JOptionPane.showMessageDialog(null, petterNicklas[0][0]);
+			
 			
 			
 		}

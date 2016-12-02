@@ -104,12 +104,16 @@ public class Calendar extends JFrame {
 		split2.setLayout(new BorderLayout());
 		split2.add(BorderLayout.CENTER,sidebar);
 		JPanel south = new JPanel();
-		south.setBackground(new Color(123,123,123));
+		south.setBackground(new Color(166, 166, 166));
 		south.setPreferredSize(new Dimension(500,100));
 		split2.add(BorderLayout.SOUTH,south);
 		south.add(sidebar.getSignOut());
 		repaint();
 		pack();
+		
+	}
+	public void Loggaut()
+	{
 		
 	}
 

@@ -27,7 +27,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 
 	public register()
 	{ 
-		setBackground(new Color(163, 220, 206));
+		setBackground(new Color(166, 166, 166));
 		setLayout (new GridLayout (12, 0));
 		JLabel l1 = new JLabel();
 		add(l1);

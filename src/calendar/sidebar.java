@@ -23,7 +23,7 @@ public class sidebar extends JPanel implements ActionListener {
 	{
 		this.calendar = calendar;
 		setLayout(new GridLayout(5,1,20,20));
-		setBackground(new Color(123,123,123));
+		setBackground(new Color(166, 166, 166));
 	
 		notification = new JButton ("Notifikationer");
 		notification.setPreferredSize(new Dimension (20,60));
