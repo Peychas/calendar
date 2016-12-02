@@ -17,13 +17,15 @@ public class Inloggning extends JPanel implements ActionListener {
 //JPasswordField password;
 	JTextField password;
 JTextField username;
-JButton Login; 
+JButton Login;
+private Calendar calendar;
 
 	
 JavaDB db = new JavaDB("localhost","root","","calendar");
 
-		public Inloggning()
+		public Inloggning(Calendar calendar)
 		{
+			this.calendar = calendar;
 			
 			username = new JTextField();
 			username.setPreferredSize(new Dimension(100,30));
@@ -59,7 +61,10 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			// kollar om det du skriver in matchar med databasen
 			
 			try{
-			   if((String)database[0][0]=="");
+			   if(database.length==1)
+			   {
+				   calendar.changeSplit2();
+			   }
 			   
 			    
 			   
