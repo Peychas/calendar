@@ -22,11 +22,9 @@ public class Calendar extends JFrame {
 	private Banner banner;
 	public int manad = 0;
 
-<<<<<<< HEAD
-	private JSplitPane split2;
-=======
+
 	private JPanel split2;
->>>>>>> 7a358dc72abb3c07777bc275213ccc5990183f75
+
 	private JSplitPane split3;
 
 	private Week week;
