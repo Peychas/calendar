@@ -1,18 +1,21 @@
 package calendar;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.time.LocalDateTime;
 import java.time.YearMonth;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 public class Week extends JPanel {
 
 		public Week() {
 			GridBagLayout abc = new GridBagLayout();
-			int[] abcwidth = new int[7];
+			int[] abcwidth = new int[8];
 			for (int i = 0; i < abcwidth.length; i++)
 				abcwidth[i] = 130;
 			abc.columnWidths = abcwidth;
@@ -55,8 +58,11 @@ public class Week extends JPanel {
 
 			System.out.printf("%d-%02d-%02d", year, month, day);
 			JLabel[] labels1 = new JLabel[35];
+			Border border = BorderFactory.createLineBorder(Color.GRAY, 2);
+
 			for(int i = 0; i < labels1.length; i++) {
 				labels1[i] = new JLabel("ö", JLabel.CENTER);
+				labels1[i].setBorder(border);
 				add(labels1[i], c);
 				c.gridx++;
 				if (c.gridx >= 7) {
