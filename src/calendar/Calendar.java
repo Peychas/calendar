@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.time.LocalDateTime;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,14 +22,19 @@ public class Calendar extends JFrame {
 	private sidebar sidebar;
 	private Month month;
 	private Banner banner;
-	public int manad = 0;
+	public LocalDateTime now = LocalDateTime.now();
+	public int manad = now.getMonthValue();;
+	public int år = now.getYear();
+	public int dag = now.getDayOfMonth();
+	public int timma = now.getHour();
+	public int minut = now.getMinute();
 
 
 	
 
 	private JPanel split2;
 
-	private JSplitPane split3;
+	private JPanel split3;
 
 	private Week week;
 
@@ -74,13 +80,15 @@ public class Calendar extends JFrame {
 		
 		
 		
-		JPanel split3 = new JPanel();
+		 split3 = new JPanel();
 		split3.setLayout(new GridLayout(2,1));
-		banner = new Banner();
+		banner = new Banner(this);
 		split3.add(banner);
-		month = new Month(manad);
+		month = new Month(this);
 		split3.add(month);
 		split.setRightComponent(split3);
+		
+		
 		sidebar = new sidebar(this);
 		
 		
@@ -115,6 +123,15 @@ public class Calendar extends JFrame {
 	public void Loggaut()
 	{
 		
+	}
+	
+	public void showManad()
+	{
+		split3.remove(month);
+		month = new Month(this);
+		split3.add(month);
+		repaint();
+		pack();	
 	}
 
 }

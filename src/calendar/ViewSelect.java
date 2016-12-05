@@ -12,8 +12,11 @@ import javax.swing.JPanel;
 public class ViewSelect extends JPanel implements ActionListener {
 	
 	private JButton previous;
+	private Calendar cal;
+	private Banner ban;
 	
-	public ViewSelect(){
+	public ViewSelect(Calendar cal,Banner ban){
+		this.cal=cal;this.ban=ban;
 		setLayout(new GridLayout(3,9));
 		JLabel[] labels = new JLabel[18];
 		for(int i = 0; i < labels.length; i++){
@@ -43,7 +46,9 @@ public class ViewSelect extends JPanel implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == previous){
-			
+			ban.showBanner();
+			cal.manad -= 1;
+			cal.showManad();
 		}
 		
 	}
