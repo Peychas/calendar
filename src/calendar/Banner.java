@@ -21,13 +21,7 @@ public class Banner extends JPanel {
 		setLayout(new GridLayout(3,1));
 		JLabel space = new JLabel();
 		add(space);
-		LocalDateTime now = LocalDateTime.of(cal.år, cal.manad, cal.dag, 0, 0);
-		Month month = now.getMonth();
-		int year = now.getYear();
-		int day = now.getDayOfMonth();
-		int hour = now.getHour();
-		int minute = now.getMinute();
-		 label = new JLabel(month +  " " + year , JLabel.CENTER);
+		label = new JLabel(cal.manad +  " " + cal.år , JLabel.CENTER);
 		label.setFont(new Font("San-Serif", Font.PLAIN, 40));
  		add(label);
  		viewselect = new ViewSelect(cal,this);
@@ -38,13 +32,7 @@ public class Banner extends JPanel {
 	{
 		remove(label);
 		remove(viewselect);
-		LocalDateTime now = LocalDateTime.of(cal.år, cal.manad, cal.dag, 0, 0);
-		Month month = now.getMonth();
-		int year = now.getYear();
-		int day = now.getDayOfMonth();
-		int hour = now.getHour();
-		int minute = now.getMinute();
-		 label = new JLabel(month +  " " + year , JLabel.CENTER);
+		 label = new JLabel(cal.manad +  " " + cal.år , JLabel.CENTER);
 		label.setFont(new Font("San-Serif", Font.PLAIN, 40));
  		add(label);
  		viewselect = new ViewSelect(cal,this);
