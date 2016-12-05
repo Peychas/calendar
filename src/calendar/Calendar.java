@@ -78,8 +78,8 @@ public class Calendar extends JFrame {
 		split3.setLayout(new GridLayout(2,1));
 		banner = new Banner();
 		split3.add(banner);
-		week = new Week();
-		split3.add(week);
+		month = new Month(manad);
+		split3.add(month);
 		split.setRightComponent(split3);
 		sidebar = new sidebar(this);
 		
