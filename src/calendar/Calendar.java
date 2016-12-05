@@ -78,8 +78,8 @@ public class Calendar extends JFrame {
 		split3.setLayout(new GridLayout(2,1));
 		banner = new Banner();
 		split3.add(banner);
-		week = new Week();
-		split3.add(week);
+		month = new Month(manad);
+		split3.add(month);
 		split.setRightComponent(split3);
 		sidebar = new sidebar(this);
 		
@@ -104,12 +104,16 @@ public class Calendar extends JFrame {
 		split2.setLayout(new BorderLayout());
 		split2.add(BorderLayout.CENTER,sidebar);
 		JPanel south = new JPanel();
-		south.setBackground(new Color(123,123,123));
+		south.setBackground(new Color(166, 166, 166));
 		south.setPreferredSize(new Dimension(500,100));
 		split2.add(BorderLayout.SOUTH,south);
 		south.add(sidebar.getSignOut());
 		repaint();
 		pack();
+		
+	}
+	public void Loggaut()
+	{
 		
 	}
 
