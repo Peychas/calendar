@@ -43,7 +43,6 @@ public class sidebar extends JPanel implements ActionListener {
 		
 		signout = new JButton ("Logga ut");
 		signout.setPreferredSize(new Dimension (210,70));
-		//add(signout);
 		signout.addActionListener(this);
 	}
 	
