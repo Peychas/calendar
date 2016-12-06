@@ -23,7 +23,8 @@ public class Calendar extends JFrame {
 	private Month month;
 	private Banner banner;
 	public LocalDateTime now = LocalDateTime.now();
-	public int manad = now.getMonthValue();;
+	public int manad = now.getMonthValue();
+	public java.time.Month mana = now.getMonth();
 	public int år = now.getYear();
 	public int dag = now.getDayOfMonth();
 	public int timma = now.getHour();

@@ -3,7 +3,6 @@ package calendar;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.YearMonth;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -47,8 +46,13 @@ public class ViewSelect extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == previous){
 			ban.showBanner();
-			cal.manad -= 1;
+			cal.manad --;
 			cal.showManad();
+			if(cal.manad <= 0){
+				cal.år --;
+				cal.manad = 12;
+			}
+			
 		}
 		
 	}
