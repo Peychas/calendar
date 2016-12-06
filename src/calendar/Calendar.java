@@ -1,5 +1,7 @@
 package calendar;
 
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +22,7 @@ public class Calendar extends JFrame {
 	private Inloggning inloggning;
 	private register registrera ;
 	private sidebar sidebar;
+	private addFriend addFriend;
 	private Month month;
 	private Banner banner;
 	public LocalDateTime now = LocalDateTime.now();
@@ -90,7 +93,7 @@ public class Calendar extends JFrame {
 		
 		
 		sidebar = new sidebar(this);
-		
+		addFriend = new addFriend(this);
 		
 		
 		
@@ -107,6 +110,7 @@ public class Calendar extends JFrame {
 	}
 	public void changeSplit2()
 	{
+		
 		split2.remove(inloggning);
 		split2.remove(registrera);
 		split2.setLayout(new BorderLayout());
@@ -133,5 +137,21 @@ public class Calendar extends JFrame {
 		repaint();
 		pack();	
 	}
+	public void showFriends()
+	{
+		split2.remove(sidebar);
+		split2.add(new addFriend(this));
+		repaint();
+		pack();
+	}
+	public void tillbaka()
+	{
+		split2.remove(addFriend);
+		split2.add(new sidebar(this));
+		repaint();
+		pack();
+		
+	}
+	
 
 }

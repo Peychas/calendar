@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -63,7 +64,11 @@ public class sidebar extends JPanel implements ActionListener {
 
 	
 	public void actionPerformed(ActionEvent e) {
-		
+	
+		if(e.getSource().equals(addFriends))
+		{
+			calendar.showFriends();
+		}
 		
 	}
 

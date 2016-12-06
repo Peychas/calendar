@@ -16,7 +16,7 @@ public class Week extends JPanel {
 		public Week() {
 			GridBagLayout abc = new GridBagLayout();
 			int[] abcwidth = new int[8];
-			for (int i = 0; i < abcwidth.length; i++)
+	 		for (int i = 0; i < abcwidth.length; i++)
 				abcwidth[i] = 130;
 			abc.columnWidths = abcwidth;
 			int[] abcheight = new int[7];
