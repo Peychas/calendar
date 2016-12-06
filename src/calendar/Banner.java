@@ -28,7 +28,7 @@ public class Banner extends JPanel {
 	{
 		remove(label);
 		remove(viewselect);
-		label = new JLabel(cal.mana +  " " + cal.år , JLabel.CENTER);
+		label = new JLabel(cal.manad +  " " + cal.år , JLabel.CENTER);
 		label.setFont(new Font("San-Serif", Font.PLAIN, 40));
  		add(label);
  		viewselect = new ViewSelect(cal,this);

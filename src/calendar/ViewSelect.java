@@ -13,6 +13,7 @@ public class ViewSelect extends JPanel implements ActionListener {
 	private JButton previous;
 	private Calendar cal;
 	private Banner ban;
+	private JButton next;
 	
 	public ViewSelect(Calendar cal,Banner ban){
 		this.cal=cal;this.ban=ban;
@@ -24,7 +25,7 @@ public class ViewSelect extends JPanel implements ActionListener {
 		}
 		previous = new JButton("<");
 		add(previous);
-		JButton next = new JButton(">");
+		next = new JButton(">");
 		add(next);
 		JButton today = new JButton("Idag");
 		add(today);
@@ -41,19 +42,29 @@ public class ViewSelect extends JPanel implements ActionListener {
 		JButton day = new JButton("Dag");
 		add(day);
 		previous.addActionListener(this);
+		next.addActionListener(this);
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == previous){
-			ban.showBanner();
 			cal.manad --;
-			cal.showManad();
-			if(cal.manad <= 0){
+			if(cal.manad <= 1){
 				cal.år --;
 				cal.manad = 12;
 			}
-			
+			ban.showBanner();
+			cal.showManad();
 		}
+		if(e.getSource() == next){
+			cal.manad ++;
+			if(cal.manad >= 12){
+				cal.år ++;
+				cal.manad = 1;
+			}
+			ban.showBanner();
+			cal.showManad();
+		}
+		
 		
 	}
 }
