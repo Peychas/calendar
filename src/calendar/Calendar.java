@@ -21,8 +21,8 @@ public class Calendar extends JFrame {
 	
 	private Inloggning inloggning;
 	private register registrera ;
-	private sidebar sidebar;
-	private addFriend addFriend;
+	private sidebar sb;
+	private addFriend af;
 	private Month month;
 	private Banner banner;
 	public LocalDateTime now = LocalDateTime.now();
@@ -31,6 +31,7 @@ public class Calendar extends JFrame {
 	public int dag = now.getDayOfMonth();
 	public int timma = now.getHour();
 	public int minut = now.getMinute();
+	public int inloggid;
 
 
 	
@@ -92,8 +93,8 @@ public class Calendar extends JFrame {
 		split.setRightComponent(split3);
 		
 		
-		sidebar = new sidebar(this);
-		addFriend = new addFriend(this);
+		sb = new sidebar(this);
+		af = new addFriend(this);
 		
 		
 		
@@ -114,12 +115,12 @@ public class Calendar extends JFrame {
 		split2.remove(inloggning);
 		split2.remove(registrera);
 		split2.setLayout(new BorderLayout());
-		split2.add(BorderLayout.CENTER,sidebar);
+		split2.add(BorderLayout.CENTER,sb);
 		JPanel south = new JPanel();
 		south.setBackground(new Color(166, 166, 166));
 		south.setPreferredSize(new Dimension(500,100));
 		split2.add(BorderLayout.SOUTH,south);
-		south.add(sidebar.getSignOut());
+		south.add(sb.getSignOut());
 		repaint();
 		pack();
 		
@@ -137,16 +138,17 @@ public class Calendar extends JFrame {
 		repaint();
 		pack();	
 	}
-	public void showFriends()
+	public void addFriend()
 	{
-		split2.remove(sidebar);
-		split2.add(new addFriend(this));
+		split2.remove(sb);
+		af = new addFriend (this);
+		split2.add(af);
 		repaint();
 		pack();
 	}
 	public void tillbaka()
 	{
-		split2.remove(addFriend);
+		split2.remove(af);
 		split2.add(new sidebar(this));
 		repaint();
 		pack();

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -80,9 +81,17 @@ public void actionPerformed(ActionEvent e) {
 
 	
 	String Field = field.getText();
+	// listaminvänner
+	//String SQL = String.format("SELECT username FROM user, friendwith WHERE ((user1 = "+ calendar.inloggid +" and user2 = user.id) or (user2="+ calendar.inloggid + " and user1 = user.id) and verified =1);");
 	
-	String SQL = String.format("SELECT username FROM user, friendwith WHERE ((user1 = 2 and user2 = user.id) or (user2=2 and user1 = user.id) and verified =1);");
-	db.execute(SQL);
+	String SQL = ("SELECT id, username FROM user WHERE username like ('%" + field.getText()+ "%')");
+	System.out.println(SQL);
+	Object [][] database = db.getData(SQL);
+	System.out.println(database[0][1]);
+	
+	
+	
+	JOptionPane.showMessageDialog(null, SQL);
 }
 
 public static void main(String[] args) {

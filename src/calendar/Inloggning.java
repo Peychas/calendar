@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Inloggning extends JPanel implements ActionListener {
@@ -63,6 +62,8 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			try{
 			   if(database.length==1)
 			   {
+				   
+				   calendar.inloggid = Integer.parseInt((String)database[0][0]);
 				   calendar.changeSplit2();
 			   }
 			   

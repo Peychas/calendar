@@ -67,7 +67,7 @@ public class sidebar extends JPanel implements ActionListener {
 	
 		if(e.getSource().equals(addFriends))
 		{
-			calendar.showFriends();
+			calendar.addFriend();
 		}
 		
 	}
