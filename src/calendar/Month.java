@@ -2,6 +2,8 @@ package calendar;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.YearMonth;
 
@@ -11,8 +13,16 @@ import javax.swing.JPanel;
 
 public class Month extends JPanel {
 	private Calendar cal;
+	private JButton[] buttons;
 
 	public Month(Calendar cal) {
+		ActionListener listener = new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+	            if (e.getSource() instanceof JButton) {
+	            	System.out.println("hej");
+	            }
+	        }
+		};
 		this.cal=cal;
 		GridBagLayout abc = new GridBagLayout();
 		int[] abcwidth = new int[7];
@@ -53,11 +63,13 @@ public class Month extends JPanel {
 		System.out.println(daysInMonth);
 
 		System.out.printf("%d-%02d-%02d %02d:%02d", cal.år, cal.manad, cal.dag, cal.timma, cal.minut);
+		
 		c.gridx = dayIndex;
-		JButton[] buttons = new JButton[daysInMonth];
+		buttons = new JButton[daysInMonth];
 		for (int i = 0; i < buttons.length; i++) {
 			buttons[i] = new JButton("" + (1 + i));
 			buttons[i].setSize(100, 100);
+			buttons[i].addActionListener(listener);
 			add(buttons[i], c);
 			c.gridx++;
 			if (c.gridx >= 7) {
