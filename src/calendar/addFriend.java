@@ -102,7 +102,11 @@ public class addFriend extends JPanel implements ActionListener {
 			Object[]values=userList.getSelectedValuesList().toArray();
 			
 			for(Object o: values)
-				System.out.println( ((User)o).getId());
+			{
+				String SQL="insert into friendwith(verified,user1,user2) values(0,"+calendar.inloggid+","+((User)o).getId()+");";
+				db.execute(SQL);
+			}
+				
 		} 
 
 		if (e.getSource().equals(back)) {
@@ -112,11 +116,11 @@ public class addFriend extends JPanel implements ActionListener {
 		if (e.getSource().equals(search)) {
 
 			String Field = field.getText();
-			// listaminvänner
-			// String SQL =
-			// String.format("SELECT username FROM user, friendwith WHERE ((user1 = "+
-			// calendar.inloggid +" and user2 = user.id) or (user2="+
-			// calendar.inloggid + " and user1 = user.id) and verified =1);");
+			// lista mina vänner
+			 //String SQL =
+			 //String.format("SELECT username FROM user, friendwith WHERE ((user1 = "+
+			 //calendar.inloggid +" and user2 = user.id) or (user2="+
+			 //calendar.inloggid + " and user1 = user.id) and verified =1);");
 
 			String SQL = ("SELECT id, username FROM user WHERE username like ('%"
 					+ field.getText() + "%')");
@@ -136,7 +140,7 @@ public class addFriend extends JPanel implements ActionListener {
 			} else {
 				scroll.setVisible(false);
 				JOptionPane.showMessageDialog(null,
-						"Användarnamnet existrar inte");
+						"Användarnamnet existerar inte");
 			}
 		}
 
