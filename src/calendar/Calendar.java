@@ -76,7 +76,7 @@ public class Calendar extends JFrame {
 		split2.add(inloggning);
 		
 		registrera = new register();
-		split2.setBackground(new Color(0,180,0));
+		split2.setBackground(new Color(166,166,166));
 		split2.add(registrera);
 		
 		split.setLeftComponent(split2);
@@ -149,7 +149,7 @@ public class Calendar extends JFrame {
 	public void tillbaka()
 	{
 		split2.remove(af);
-		split2.add(new sidebar(this));
+		split2.add(BorderLayout.NORTH,sb);
 		repaint();
 		pack();
 		
