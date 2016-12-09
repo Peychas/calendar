@@ -23,6 +23,7 @@ public class Calendar extends JFrame {
 	private register registrera ;
 	private sidebar sb;
 	private addFriend af;
+	private notifications noti;
 	private Month month;
 	private Banner banner;
 	public LocalDateTime now = LocalDateTime.now();
@@ -32,6 +33,9 @@ public class Calendar extends JFrame {
 	public int timma = now.getHour();
 	public int minut = now.getMinute();
 	public int inloggid;
+	
+	//Används ibland men måste ligga på klassnivå för att vi ska kunna nå den från flera metoder
+	private JPanel south;
 
 
 	
@@ -95,6 +99,9 @@ public class Calendar extends JFrame {
 		
 		sb = new sidebar(this);
 		af = new addFriend(this);
+		noti = new notifications(this);
+		
+		
 		
 		
 		
@@ -116,7 +123,7 @@ public class Calendar extends JFrame {
 		split2.remove(registrera);
 		split2.setLayout(new BorderLayout());
 		split2.add(BorderLayout.CENTER,sb);
-		JPanel south = new JPanel();
+		south = new JPanel();
 		south.setBackground(new Color(166, 166, 166));
 		south.setPreferredSize(new Dimension(500,100));
 		split2.add(BorderLayout.SOUTH,south);
@@ -127,6 +134,17 @@ public class Calendar extends JFrame {
 	}
 	public void Loggaut()
 	{
+		split2.remove(sb);
+		split2.remove(af);
+		split2.remove(south);
+		split2.add(registrera);
+		split2.add(inloggning);
+		
+		//Här ska grejor bort
+	
+		repaint();
+		pack();
+		
 		
 	}
 	
@@ -143,6 +161,7 @@ public class Calendar extends JFrame {
 		split2.remove(sb);
 		af = new addFriend (this);
 		split2.add(af);
+		split2.remove(south);
 		repaint();
 		pack();
 	}
@@ -150,10 +169,28 @@ public class Calendar extends JFrame {
 	{
 		split2.remove(af);
 		split2.add(BorderLayout.NORTH,sb);
+		split2.add(south);
 		repaint();
 		pack();
 		
 	}
-	
+	public void notifikationer()
+	{
+		split2.remove(sb);
+		split2.remove(af);
+		split2.remove(south);
+		noti = new notifications(this);
+		split2.add(noti);
+		repaint();
+		pack();
+	}
+	public void bak()
+	{
+		split2.remove(noti);
+		split2.add(BorderLayout.NORTH,sb);
+		split2.add(south);
+		repaint();
+		pack();
+	}
 
 }
