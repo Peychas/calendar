@@ -16,14 +16,15 @@ public class Month extends JPanel {
 	private JButton[] buttons;
 
 	public Month(Calendar cal) {
+		this.cal=cal;
 		ActionListener listener = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 	            if (e.getSource() instanceof JButton) {
-	            	System.out.println("hej");
+	            	new addEvent();
 	            }
 	        }
 		};
-		this.cal=cal;
+		
 		GridBagLayout abc = new GridBagLayout();
 		int[] abcwidth = new int[7];
 		for (int i = 0; i < abcwidth.length; i++)
