@@ -16,6 +16,7 @@ public class sidebar extends JPanel implements ActionListener {
 	private JButton showFriends;
 	private JButton addFriends;
 	private Calendar calendar;
+	private JButton showEvent;
 	public JButton signout;
 	
 	JavaDB db = new JavaDB("localhost","root","","calendar");
@@ -40,6 +41,10 @@ public class sidebar extends JPanel implements ActionListener {
 		addFriends.setPreferredSize(new Dimension (20,20));
 		add(addFriends);
 		addFriends.addActionListener(this);
+		showEvent = new JButton ("Visa händelser");
+		showEvent.setPreferredSize(new Dimension (20,20));
+		add(showEvent);
+		showEvent.addActionListener(this);
 		
 		
 		signout = new JButton ("Logga ut");
@@ -81,6 +86,9 @@ public class sidebar extends JPanel implements ActionListener {
 		if(e.getSource().equals(showFriends))
 		{
 			calendar.visaVänner();
+		}
+		if(e.getSource().equals(showEvent)){
+			new showEvent(calendar);
 		}
 			
 	}
