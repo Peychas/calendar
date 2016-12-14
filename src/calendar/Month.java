@@ -15,12 +15,12 @@ public class Month extends JPanel {
 	private Calendar cal;
 	private JButton[] buttons;
 
-	public Month(Calendar cal) {
+	public Month(final Calendar cal) {
 		this.cal=cal;
 		ActionListener listener = new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 	            if (e.getSource() instanceof JButton) {
-	            	new addEvent();
+	            	new addEvent(cal, this);
 	            }
 	        }
 		};
@@ -55,15 +55,12 @@ public class Month extends JPanel {
 		int dayIndex = cal.now.getDayOfWeek().getValue() - 1;
 		if (cal.now.getDayOfMonth() != 1) {
 			LocalDateTime firstDay = LocalDateTime.of(cal.år ,cal.manad , 1, 0, 0);
-			System.out.println(firstDay.getDayOfWeek());
 			dayIndex = firstDay.getDayOfWeek().getValue() - 1;
 		}
 		
 		YearMonth yearMonthObject = YearMonth.of(cal.år, cal.manad);
 		int daysInMonth = yearMonthObject.lengthOfMonth();
-		System.out.println(daysInMonth);
 
-		System.out.printf("%d-%02d-%02d %02d:%02d", cal.år, cal.manad, cal.dag, cal.timma, cal.minut);
 		
 		c.gridx = dayIndex;
 		buttons = new JButton[daysInMonth];

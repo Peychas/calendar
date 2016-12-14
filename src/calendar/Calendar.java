@@ -101,7 +101,7 @@ public class Calendar extends JFrame {
 		af = new addFriend(this);
 		noti = new notifications(this);
 		
-		
+
 		
 		
 		
