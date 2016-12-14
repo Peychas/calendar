@@ -98,7 +98,8 @@ public class addFriend extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(addFr))
-		{
+		{	
+			JOptionPane.showMessageDialog(null,"Vänförfrågan är nu skickad");
 			Object[]values=userList.getSelectedValuesList().toArray();
 			
 			for(Object o: values)
@@ -115,6 +116,7 @@ public class addFriend extends JPanel implements ActionListener {
 
 		if (e.getSource().equals(search)) {
 
+			
 			String Field = field.getText();
 			// lista mina vänner
 			 //String SQL =

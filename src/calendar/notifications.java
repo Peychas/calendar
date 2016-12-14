@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
@@ -72,24 +73,28 @@ public class notifications extends JPanel implements ActionListener {
 	
 		if(e.getSource().equals(acc))
 		{
+			JOptionPane.showMessageDialog(null, "Ni är nu vänner");
 			Object[]values=Userlist.getSelectedValuesList().toArray();
 			
 			for(Object o: values)
 			{
 				String SQL="UPDATE friendwith SET verified = 1 WHERE (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+");";
 				db.execute(SQL);
+				
+				
+				
 			}
 				
-		} 
+		}
 		
 	}
 	
-	//String SQL = "SELECT fromid, fromuser, toid, touser FROM friend_requests";
+
 	
 	public void addThisShit(){
 	
 		
-		
+		//tre stycken paranteser innan user1 och två stycken slutparanteser efter user.id för att alltid verified 0 ska gälla!
 	 String SQL =
 	 String.format("SELECT user.id, username FROM user, friendwith WHERE (((user1 = "+
 	 calendar.inloggid +" and user2 = user.id) or (user2="+
@@ -113,7 +118,7 @@ public class notifications extends JPanel implements ActionListener {
 		db.execute(SQL);
 		System.out.println(SQL);
 		
-		//"UPDATE friendwith SET verified = 1 WHERE ((user1 = 2 AND user2 = 8"
+		//"UPDATE friendwith SET verified = 1 WHERE user1 = 2 AND user2 = 8"
 		
 	}
 	

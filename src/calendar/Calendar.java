@@ -24,6 +24,7 @@ public class Calendar extends JFrame {
 	private sidebar sb;
 	private addFriend af;
 	private notifications noti;
+	private showFriends sf;
 	private Month month;
 	private Banner banner;
 	public LocalDateTime now = LocalDateTime.now();
@@ -100,6 +101,7 @@ public class Calendar extends JFrame {
 		sb = new sidebar(this);
 		af = new addFriend(this);
 		noti = new notifications(this);
+		sf = new showFriends(this);
 		
 
 		
@@ -187,6 +189,24 @@ public class Calendar extends JFrame {
 	public void bak()
 	{
 		split2.remove(noti);
+		split2.add(BorderLayout.NORTH,sb);
+		split2.add(south);
+		repaint();
+		pack();
+	}
+	public void visaVänner()
+	{
+		split2.remove(sb);
+		split2.remove(south);
+		sf = new showFriends(this);
+		split2.add(sf);
+		repaint();
+		pack();
+		
+	}
+	public void goback()
+	{
+		split2.remove(sf);
 		split2.add(BorderLayout.NORTH,sb);
 		split2.add(south);
 		repaint();
