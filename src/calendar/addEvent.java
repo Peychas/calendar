@@ -188,6 +188,9 @@ public class addEvent extends JFrame implements ActionListener {
 					+ " ('%s', '%s', '%s', '%s', '%s');  ", nam, aswewantit1, aswewantit, kommen, cal.inloggid);
 			System.out.println(SQL);
 			db.execute(SQL);
+			
+			setVisible(false);
+			
 		}
 
 	}
