@@ -1,6 +1,5 @@
 package calendar;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -9,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -29,9 +29,8 @@ public class notifications extends JPanel implements ActionListener {
 	public notifications (Calendar calendar) {
 		
 		this.calendar = calendar;
-		setLayout(new BorderLayout());
-		setLayout(new GridLayout(8,0));
-		setBorder(new EmptyBorder(30, 10, 30, 10));
+		setLayout(new GridLayout(5,1,20,20));
+		setBorder(new EmptyBorder(25,40,400,40));
 		setBackground(new Color(166, 166, 166));
 		
 		JPanel center = new JPanel();
@@ -50,12 +49,12 @@ public class notifications extends JPanel implements ActionListener {
 		
 		
 		acc = new JButton("Acceptera vänförfrågan");
-		acc.setPreferredSize(new Dimension(100,30));
+		acc.setPreferredSize(new Dimension(20,20));
 		acc.addActionListener(this);
 		add(acc);
 		
 		tillbaks = new JButton("Tillbaka");
-		tillbaks.setPreferredSize(new Dimension(110, 30));
+		tillbaks.setPreferredSize(new Dimension(210,70));
 		add(tillbaks);
 		tillbaks.addActionListener(this);
 		
