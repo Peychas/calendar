@@ -29,7 +29,6 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			this.calendar = calendar;
 			
 			username = new JTextField();
-			setLayout (new GridLayout (12, 0));
 			username.setPreferredSize(new Dimension(100,30));
 			add(username);
 			

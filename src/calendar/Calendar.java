@@ -172,6 +172,8 @@ public class Calendar extends JFrame {
 		split2.remove(af);
 		split2.add(BorderLayout.NORTH,sb);
 		split2.add(south);
+		split2.add(BorderLayout.SOUTH,south);
+		south.add(sb.getSignOut());
 		repaint();
 		pack();
 		
@@ -191,6 +193,8 @@ public class Calendar extends JFrame {
 		split2.remove(noti);
 		split2.add(BorderLayout.NORTH,sb);
 		split2.add(south);
+		split2.add(BorderLayout.SOUTH,south);
+		south.add(sb.getSignOut());
 		repaint();
 		pack();
 	}
@@ -209,6 +213,8 @@ public class Calendar extends JFrame {
 		split2.remove(sf);
 		split2.add(BorderLayout.NORTH,sb);
 		split2.add(south);
+		split2.add(BorderLayout.SOUTH,south);
+		south.add(sb.getSignOut());
 		repaint();
 		pack();
 	}
