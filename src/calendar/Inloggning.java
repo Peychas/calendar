@@ -3,12 +3,14 @@ package calendar;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class Inloggning extends JPanel implements ActionListener {
@@ -27,6 +29,7 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 			this.calendar = calendar;
 			
 			username = new JTextField();
+			setLayout (new GridLayout (12, 0));
 			username.setPreferredSize(new Dimension(100,30));
 			add(username);
 			
