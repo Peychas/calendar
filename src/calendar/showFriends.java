@@ -26,9 +26,8 @@ public class showFriends extends JPanel implements ActionListener {
 	
 	public showFriends(Calendar calendar){
 		this.calendar = calendar;
-		setLayout(new BorderLayout());
-		setLayout(new GridLayout(8,0));
-		setBorder(new EmptyBorder(30, 10, 30, 10));
+		setLayout(new GridLayout(5,0,20,20));
+		setBorder(new EmptyBorder(25,40,400,40));
 		setBackground(new Color(166, 166, 166));
 		
 		JPanel center = new JPanel();
