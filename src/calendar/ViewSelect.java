@@ -48,7 +48,7 @@ public class ViewSelect extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == previous){
 			cal.manad --;
-			if(cal.manad <= 1){
+			if(cal.manad < 1){
 				cal.år --;
 				cal.manad = 12;
 			}
@@ -57,7 +57,7 @@ public class ViewSelect extends JPanel implements ActionListener {
 		}
 		if(e.getSource() == next){
 			cal.manad ++;
-			if(cal.manad >= 12){
+			if(cal.manad > 12){
 				cal.år ++;
 				cal.manad = 1;
 			}
