@@ -3,6 +3,7 @@ package calendar;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,32 +29,50 @@ JavaDB db = new JavaDB("localhost","root","","calendar");
 	public register()
 	{ 
 		setBackground(new Color(166, 166, 166));
-		setLayout (new GridLayout (12, 0));
-		JLabel l1 = new JLabel();
-		add(l1);
+		setLayout (new GridLayout (10, 1,10,10));
+		setBorder(new EmptyBorder(25,40,50,40));
+		
 		JLabel l2 = new JLabel("Användarnamn:",JLabel.CENTER);
+		l2.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(l2);
+		
 		username = new JTextField();
-		username.setPreferredSize(new Dimension (100,30));
+		username.setPreferredSize(new Dimension (100,40));
+		username.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(username);
+		
 		JLabel l3 = new JLabel("Email:",JLabel.CENTER);
+		l3.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(l3);
+		
 		email = new JTextField();
-		email.setPreferredSize(new Dimension (100,30));
+		email.setPreferredSize(new Dimension (100,40));
+		email.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(email);
+		
 		JLabel l4 = new JLabel("Lösenord:",JLabel.CENTER);
+		l4.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(l4);
+		
 		password1 = new JPasswordField();
-		password1.setPreferredSize(new Dimension (100,30));
+		password1.setPreferredSize(new Dimension (100,40));
+		password1.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(password1);
+		
 		JLabel l5 = new JLabel("Återupprepa lösenord:",JLabel.CENTER);
+		l5.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(l5);
+		
 		password2 = new JPasswordField();
-		password2.setPreferredSize(new Dimension (100,30));
+		password2.setPreferredSize(new Dimension (100,40));
+		password2.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(password2);
+		
 		JLabel l6 = new JLabel();
 		add(l6);
+		
 		reg = new JButton("Registrera dig");
+		reg.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		reg.addActionListener(this);
 		add(reg);
 		

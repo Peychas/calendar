@@ -2,6 +2,7 @@ package calendar;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,26 +30,33 @@ public class sidebar extends JPanel implements ActionListener {
 	
 		notification = new JButton ("Notifikationer");
 		notification.setPreferredSize(new Dimension (20,60));
+		notification.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		setBorder(new EmptyBorder(25,40,400,40));
-		
 		add(notification);
 		notification.addActionListener(this);
+		
 		showFriends = new JButton ("Visa vänner");
 		showFriends.setPreferredSize(new Dimension (20,20));
+		showFriends.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(showFriends);
 		showFriends.addActionListener(this);
+		
 		addFriends = new JButton ("Lägg till vän");
 		addFriends.setPreferredSize(new Dimension (20,20));
+		addFriends.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(addFriends);
 		addFriends.addActionListener(this);
+		
 		showEvent = new JButton ("Visa händelser");
 		showEvent.setPreferredSize(new Dimension (20,20));
+		showEvent.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(showEvent);
 		showEvent.addActionListener(this);
 		
 		
 		signout = new JButton ("Logga ut");
 		signout.setPreferredSize(new Dimension (210,70));
+		signout.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		signout.addActionListener(this);
 	}
 	

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,6 +42,7 @@ public class addFriend extends JPanel implements ActionListener {
 		// add(l1);
 		JPanel s = new JPanel();
 		s.setBorder(new TitledBorder("Skriv in användarnamnet"));
+		s.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		s.setLayout(new GridLayout(1, 1));
 		s.setBackground(this.getBackground());
 		// s.setBackground(new Color(0,180,0));
@@ -54,10 +56,12 @@ public class addFriend extends JPanel implements ActionListener {
 		b.setBackground(this.getBackground());
 		search = new JButton("Sök");
 		search.setPreferredSize(new Dimension(110, 30));
+		search.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		b.add(search);
 		// add(b);
 		back = new JButton("Tillbaka");
 		back.setPreferredSize(new Dimension(110, 30));
+		back.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		b.add(back);
 		back.addActionListener(this);
 		search.addActionListener(this);
@@ -79,12 +83,14 @@ public class addFriend extends JPanel implements ActionListener {
 		userList = new JList(model);
 		scroll = new JScrollPane(userList);
 		scroll.setPreferredSize(new Dimension(300, 150));
+		scroll.setFont(new Font("Sans-Serif", Font.PLAIN,16));
 		center.add(BorderLayout.CENTER, scroll);
 		scroll.setVisible(false);
 
 		addFr = new JButton("Skicka vänförfrågan");
 		addFr.addActionListener(this);
 		addFr.setPreferredSize(new Dimension(110, 30));
+		addFr.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(BorderLayout.SOUTH, addFr);
 
 		/*

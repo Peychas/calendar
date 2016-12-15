@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 
+
 public class Calendar extends JFrame {
 
 	/**
@@ -139,8 +140,9 @@ public class Calendar extends JFrame {
 		split2.remove(sb);
 		split2.remove(af);
 		split2.remove(south);
-		split2.add(registrera);
+		split2.setLayout(new GridLayout(2,1));
 		split2.add(inloggning);
+		split2.add(registrera);
 		
 		//Här ska grejor bort
 	

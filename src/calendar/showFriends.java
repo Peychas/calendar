@@ -3,6 +3,7 @@ package calendar;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -34,12 +35,13 @@ public class showFriends extends JPanel implements ActionListener {
 		model = new DefaultListModel<User>();
 		Userlist = new JList(model);
 		populateFriends();
-		
 		Userlist.setPreferredSize(new Dimension(400,100));
+		Userlist.setFont(new Font("Sans-Serif", Font.PLAIN,18));
 		add(Userlist);
 		
 		tillbaka = new JButton("Tillbaka");
 		tillbaka.setPreferredSize(new Dimension(110, 30));
+		tillbaka.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(tillbaka);
 		tillbaka.addActionListener(this);
 		

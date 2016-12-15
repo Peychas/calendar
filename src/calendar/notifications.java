@@ -2,6 +2,7 @@ package calendar;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,6 +41,7 @@ public class notifications extends JPanel implements ActionListener {
 		model = new DefaultListModel<User>();
 		Userlist = new JList(model);
 		Userlist.setPreferredSize(new Dimension(400,100));
+		Userlist.setFont(new Font("Sans-Serif", Font.PLAIN,10));
 
 /*		scroll = new JScrollPane(Userlist);
 		scroll.setPreferredSize(new Dimension(300, 150));
@@ -48,13 +50,15 @@ public class notifications extends JPanel implements ActionListener {
 		add(Userlist);
 		
 		
-		acc = new JButton("Acceptera vänförfrågan");
+		acc = new JButton("Acceptera");
 		acc.setPreferredSize(new Dimension(20,20));
+		acc.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		acc.addActionListener(this);
 		add(acc);
 		
 		tillbaks = new JButton("Tillbaka");
 		tillbaks.setPreferredSize(new Dimension(210,70));
+		tillbaks.setFont(new Font("Sans-Serif", Font.PLAIN,20));
 		add(tillbaks);
 		tillbaks.addActionListener(this);
 		
