@@ -33,6 +33,8 @@ public class showFriends extends JPanel implements ActionListener {
 		JPanel center = new JPanel();
 		model = new DefaultListModel<User>();
 		Userlist = new JList(model);
+		populateFriends();
+		
 		Userlist.setPreferredSize(new Dimension(400,100));
 		add(Userlist);
 		
@@ -43,6 +45,38 @@ public class showFriends extends JPanel implements ActionListener {
 		
 		
 	}
+	
+	
+	
+	public void populateFriends()
+	{
+		model.clear();
+		String SQL="SELECT user.id, username FROM user inner join friendwith on user2=user.id WHERE verified = 1 and user1 =" + calendar.inloggid+";";
+		Object[][]matris = db.getData(SQL);
+		
+					for(int i=0;i<matris.length;i++)
+					{
+						User u = new User(matris[i][0].toString(),matris[i][1].toString());
+						if(!u.getId().equals(calendar.inloggid))
+						{
+							model.addElement(u);
+						}
+					}
+		
+		SQL="SELECT user.id, username FROM user inner join friendwith on user1=user.id WHERE verified = 1 and user2 =" + calendar.inloggid+";";
+		
+		matris = db.getData(SQL);
+		
+		for(int i=0;i<matris.length;i++)
+		{
+			User u = new User(matris[i][0].toString(),matris[i][1].toString());
+			if(!u.getId().equals(calendar.inloggid))
+			{
+				model.addElement(u);
+			}
+		}
+		Userlist.updateUI();
+	}
 
 
 	
@@ -52,21 +86,7 @@ public class showFriends extends JPanel implements ActionListener {
 			calendar.goback();
 		}
 		
-		if(e.getSource().equals(model))
-		{
-			Object[]values=Userlist.getSelectedValuesList().toArray();
-			
-			for(Object o: values)
-			{
-				String SQL="SELECT * FROM friendwith WHERE verified = 1, (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+");";
-				db.execute(SQL);
-				System.out.println(SQL);
-				
-				//UPDATE friendwith SET verified = 1 WHERE (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+");
-				//"SELECT * FROM frindwith WHERE (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+" AND verified = 1 ";
-			}
-				
-		} 
+
 	}
 
 
