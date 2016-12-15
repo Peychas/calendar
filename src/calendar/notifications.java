@@ -77,8 +77,11 @@ public class notifications extends JPanel implements ActionListener {
 			
 			for(Object o: values)
 			{
-				String SQL="UPDATE friendwith SET verified = 1 WHERE (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+");";
+				String SQL="UPDATE friendwith SET verified = 1 WHERE (user1 = "+ calendar.inloggid +" AND user2 = "+((User)o).getId()+") OR" +
+						"(user2 = "+ calendar.inloggid +" AND user1 = "+((User)o).getId()+") ;";
+				System.out.println(SQL);
 				db.execute(SQL);
+				
 				
 				
 				
