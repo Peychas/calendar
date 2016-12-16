@@ -41,7 +41,7 @@ public class notifications extends JPanel implements ActionListener {
 		model = new DefaultListModel<User>();
 		Userlist = new JList(model);
 		Userlist.setPreferredSize(new Dimension(400,100));
-		Userlist.setFont(new Font("Sans-Serif", Font.PLAIN,10));
+		Userlist.setFont(new Font("Sans-Serif", Font.PLAIN,18));
 
 /*		scroll = new JScrollPane(Userlist);
 		scroll.setPreferredSize(new Dimension(300, 150));

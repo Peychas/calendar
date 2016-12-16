@@ -83,7 +83,7 @@ public class addFriend extends JPanel implements ActionListener {
 		userList = new JList(model);
 		scroll = new JScrollPane(userList);
 		scroll.setPreferredSize(new Dimension(300, 150));
-		scroll.setFont(new Font("Sans-Serif", Font.PLAIN,16));
+		scroll.setFont(new Font("Sans-Serif", Font.PLAIN,18));
 		center.add(BorderLayout.CENTER, scroll);
 		scroll.setVisible(false);
 
